@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">library_android</string>
+    <string name="app_name">Каталог книг</string>
+    <string name="book_title">Название книги</string>
+    <string name="book_author">Автор</string>
+    <string name="book_image">Обложка</string>
+    <string name="all_books">Книги</string>
+    <string name="read_books">Прочитано</string>
+    <string name="books_in_plan">В планах</string>
+    <string name="books_in_process">В процессе</string>
+    <string name="not_interesting_books">Не интересно</string>
+    <string name="delete">Удалить</string>
+    <string name="series">Серия</string>
+    <string name="description">Аннотация</string>
+    <string name="comment">Комментарий</string>
+    <string name="link">Ссылка</string>
+    <string name="edit">Редактировать</string>
+    <string name="search">Поиск</string>
 </resources>

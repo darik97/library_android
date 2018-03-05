@@ -1,4 +1,4 @@
-package library.library_android
+package library.libraryandroid
 
 import org.junit.Test
 

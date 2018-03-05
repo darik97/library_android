@@ -1,4 +1,4 @@
-package library.library_android
+package library.libraryandroid
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

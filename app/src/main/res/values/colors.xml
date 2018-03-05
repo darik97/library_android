@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#00bcd4</color>
+    <color name="colorPrimaryDark">#0097a7</color>
+    <color name="colorAccent">#ff4081</color>
+    <!--<color name="textColorPrimary">#000000</color>-->
+    <color name="textColorSecondary">#929292</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="titleTextColor">#FFFFFF</color>
+    <color name="stateInProgress">#fec63d</color>
+    <color name="stateIsRead">#629c44</color>
+    <color name="stateInPlans">#00a4d3</color>
+    <color name="stateNotInteresting">#e61610</color>
+    <!--<color name="navigationBarColor">#000000</color>-->
 </resources>

@@ -3,6 +3,7 @@ package library.libraryandroid.ui
 import android.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.support.v7.widget.LinearLayoutManager
 import library.libraryandroid.R
 import android.support.v7.widget.Toolbar
@@ -16,6 +17,7 @@ import library.libraryandroid.models.BriefBook
 
 class MainActivity : AppCompatActivity() {
     private lateinit var toolbar: Toolbar
+//    private lateinit var floating: FloatingActionButton
     private lateinit var linearLayoutManager: LinearLayoutManager
     private var booklistFragment: BookListFragment? = null
 
@@ -42,6 +44,9 @@ class MainActivity : AppCompatActivity() {
         val adapter = BookListAdapter(books, this)
         recycle_book_list.adapter = adapter
 
+//        floating = findViewById<FloatingActionButton>(R.id.fab) as FloatingActionButton
+//        floating.setImageResource(R.drawable.icon_toolbar_clear)
+//        floating.setBackgroundColor(resources.getColor(R.color.colorAccent))
 
 
 //        booklistFragment = Fragment.instantiate(this@MainActivity,

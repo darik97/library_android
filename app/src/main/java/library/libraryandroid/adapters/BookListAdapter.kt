@@ -18,7 +18,7 @@ class BookListAdapter(val books: ArrayList<BriefBook>, val context: Context)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookListAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.book_card, parent, false)
-        return ViewHolder(v, context)
+        return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: BookListAdapter.ViewHolder, position: Int) {
@@ -29,7 +29,7 @@ class BookListAdapter(val books: ArrayList<BriefBook>, val context: Context)
         return books.size
     }
 
-    class ViewHolder(itemView: View, context: Context) : RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bindItems(book: BriefBook, context: Context) {
             itemView.book_title.text = book.title
             var authors : ArrayList<String> = ArrayList()
@@ -45,6 +45,5 @@ class BookListAdapter(val books: ArrayList<BriefBook>, val context: Context)
                 3->itemView.book_state.setTextColor(context.getColor(R.color.stateNotInteresting))
             }
         }
-
     }
 }

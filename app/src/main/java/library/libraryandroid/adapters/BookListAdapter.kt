@@ -32,10 +32,7 @@ class BookListAdapter(val books: ArrayList<BriefBook>, val context: Context)
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bindItems(book: BriefBook, context: Context) {
             itemView.book_title.text = book.title
-            var authors : ArrayList<String> = ArrayList()
-            for (author in book.authors )
-                authors.add(author.firstName + " " + author.lastName)
-            itemView.book_author.text = authors.joinToString(", ")
+            itemView.book_author.text = book.author
             itemView.book_state.text = book.getStateName()
 
             when (book.status) {

@@ -1,20 +1,29 @@
 package library.libraryandroid.models
 
-data class BriefBook (
-        var id: Int = -1,
-        var title: String,
-        var authors : ArrayList<Author> = ArrayList(),
-        var status : Int,
-        var image : ByteArray) {
+import android.arch.persistence.room.ColumnInfo
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.ForeignKey
+import android.arch.persistence.room.PrimaryKey
+
+@Entity(tableName = "BriefBooks")
+data class BriefBook ( @PrimaryKey(autoGenerate = true) var id: Long?,
+                       @ColumnInfo(name = "title") var title: String,
+                       @ColumnInfo(name = "author") var author: String,
+                       @ColumnInfo(name = "status") var status: Int,
+                       @ColumnInfo(name = "image") var image : String) {
+
+    constructor():this(null, "", "", 0, "")
+
+    class List : ArrayList<BriefBook>()
 
     override fun equals(other: Any?): Boolean {
         if (other is BriefBook)
-            return title == other.title && authors == other.authors
+            return title == other.title && author == other.author
         return false
     }
 
     override fun hashCode(): Int {
-        return title.hashCode() * authors.hashCode()
+        return title.hashCode() * author.hashCode()
     }
 
     fun getStateName() : String {
@@ -28,23 +37,19 @@ data class BriefBook (
     }
 }
 
-data class Book (
-        var brief: BriefBook,
-        var genres: Genre,
-        var rating: Int = 0,
-        var series: Int = -1,
-        var description: String = "",
-        var comment: String = "",
-        var link: String = ""
-)
+@Entity(tableName = "Books",
+        foreignKeys = arrayOf(ForeignKey(entity = BriefBook::class,
+        parentColumns = arrayOf("id"),
+        childColumns = arrayOf("brief"),
+        onDelete = ForeignKey.CASCADE)))
 
-data class Genre (
-        val id: Int = -1,
-        val name: String
-)
+data class Book (@PrimaryKey(autoGenerate = true) var id: Long?,
+                 @ColumnInfo(name = "brief") var brief: Long?,
+                 @ColumnInfo(name = "genre") var genre: String,
+                 @ColumnInfo(name = "rating") var rating: Int,
+                 @ColumnInfo(name = "series") var series: String,
+                 @ColumnInfo(name = "description") var description: String,
+                 @ColumnInfo(name = "comment") var comment: String) {
 
-data class Author (
-        val id : Int = -1,
-        val firstName : String = "",
-        val lastName : String
-)
+    constructor():this(null, null, "", 0, "", "", "")
+}

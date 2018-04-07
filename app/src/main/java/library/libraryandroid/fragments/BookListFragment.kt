@@ -2,6 +2,8 @@ package library.libraryandroid.fragments
 
 import android.app.ActionBar
 import android.app.Fragment
+import android.content.Context
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -13,7 +15,6 @@ import android.widget.Toolbar
 import kotlinx.android.synthetic.main.book_list_fragment.*
 import library.libraryandroid.R
 import library.libraryandroid.adapters.BookListAdapter
-import library.libraryandroid.models.Author
 import library.libraryandroid.models.BriefBook
 
 class BookListFragment : Fragment() {
@@ -49,4 +50,18 @@ class BookListFragment : Fragment() {
 
     }
 
+    private var networkManager = NetworkManager(this.context!!)
+
+    fun loadBooks() {
+    }
+
+}
+
+class NetworkManager(var context: Context) {
+    val isConnected: Boolean?
+        get() {
+            val connectManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            val info = connectManager.activeNetworkInfo
+            return info != null && info.isConnected
+        }
 }

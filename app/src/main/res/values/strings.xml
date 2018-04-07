@@ -15,4 +15,11 @@
     <string name="link">Ссылка</string>
     <string name="edit">Редактировать</string>
     <string name="search">Поиск</string>
+    <string name="search_hint">Название/автор</string>
+
+    <string name="text_sample">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In a porttitor nisi, at vestibulum risus. Aenean et tellus odio. Curabitur nisi ante, finibus ac sem sed, maximus vulputate leo. Proin vitae quam at quam accumsan facilisis. Sed fermentum augue nibh, in porta tellus efficitur gravida. Quisque condimentum molestie neque et posuere. Nam dictum pulvinar leo, sit amet sagittis massa imperdiet sit amet. Pellentesque iaculis enim non dictum vulputate. Fusce congue nibh ex, nec aliquam mauris pellentesque vitae. In quis erat vitae massa ornare pellentesque. Quisque sed neque ex. Nunc tristique lorem quis consequat dignissim. Duis auctor eleifend rutrum. Donec et facilisis tellus. Suspendisse ac rutrum sapien, vel pulvinar odio.
+
+Morbi ut feugiat justo. Sed placerat sed ante eu bibendum. Curabitur aliquam, sapien nec vehicula finibus, dui metus dapibus massa, a varius lacus diam id velit. Duis scelerisque, nisl vel sagittis eleifend, felis sapien posuere diam, vel dapibus dui lacus et dui. Sed tempus dapibus ultricies. Praesent egestas, enim in mattis pulvinar, erat mi cursus nibh, sit amet interdum augue ante eget urna. Integer ac tempor libero, egestas porttitor enim. Sed at ipsum ac lacus dapibus varius. Phasellus porta, augue sed placerat efficitur, nisi felis aliquet tortor, eu ultrices tellus ante vel dui. Quisque eros ipsum, interdum eu fermentum sit amet, aliquam vel sapien.
+    </string>
 </resources>

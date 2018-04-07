@@ -1,28 +1,46 @@
 package library.libraryandroid.ui
 
 import android.app.Fragment
+import android.app.SearchManager
+import android.content.Context
+import android.content.Intent
+import android.graphics.BitmapFactory
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.CollapsingToolbarLayout
 import android.support.design.widget.FloatingActionButton
+import android.support.v7.graphics.Palette
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import library.libraryandroid.R
 import android.support.v7.widget.Toolbar
+import android.view.Menu
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.book_list_fragment.*
 import library.libraryandroid.adapters.BookListAdapter
 import library.libraryandroid.fragments.BookListFragment
-import library.libraryandroid.models.Author
 import library.libraryandroid.models.BriefBook
+import android.support.v4.widget.SearchViewCompat.setSearchableInfo
+import android.support.v4.view.MenuItemCompat.getActionView
+import android.widget.SearchView
 
 
 class MainActivity : AppCompatActivity() {
+
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContentView(R.layout.activity_book)
+//    }
+
+
     private lateinit var toolbar: Toolbar
-//    private lateinit var floating: FloatingActionButton
+    private lateinit var floating: FloatingActionButton
     private lateinit var linearLayoutManager: LinearLayoutManager
     private var booklistFragment: BookListFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        handleIntent(intent)
         setContentView(R.layout.activity_main)
 
         toolbar = findViewById<Toolbar>(R.id.toolbar_booklist) as Toolbar
@@ -32,14 +50,10 @@ class MainActivity : AppCompatActivity() {
         recycle_book_list.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
 
         val books = ArrayList<BriefBook>()
-        val authors = ArrayList<Author>()
-        authors.add(Author(-1, "Галина", "Гончарова"))
-        authors.add(Author(-1, "Галина1", "Гончарова1"))
-        authors.add(Author(-1, "Галина2", "Гончарова2"))
-        books.add(BriefBook(-1, "Азъ есмь Софья. Сестра", authors,0, ByteArray(1)))
-        books.add(BriefBook(-1, "Азъ есмь Софья. Царевна", authors,1, ByteArray(1)))
-        books.add(BriefBook(-1, "Азъ есмь Софья. Государыня", authors,2, ByteArray(1)))
-        books.add(BriefBook(-1, "Азъ есмь Софья. Тень за троном", authors,3, ByteArray(1)))
+        books.add(BriefBook(-1, "Азъ есмь Софья. Сестра", "Гончарова Галина", 0, ""))
+        books.add(BriefBook(-1, "Азъ есмь Софья. Царевна", "Гончарова Галина", 1, ""))
+        books.add(BriefBook(-1, "Азъ есмь Софья. Государыня", "Гончарова Галина", 2, ""))
+        books.add(BriefBook(-1, "Азъ есмь Софья. Тень за троном", "Гончарова Галина", 3, ""))
 
         val adapter = BookListAdapter(books, this)
         recycle_book_list.adapter = adapter
@@ -57,30 +71,32 @@ class MainActivity : AppCompatActivity() {
 
 //        linearLayoutManager = LinearLayoutManager(this)
 
-//        val recyclerView = findViewById<RecyclerView>(R.id.recycle_book_list) as RecyclerView
+        val recyclerView = findViewById<RecyclerView>(R.id.recycle_book_list) as RecyclerView
 
 
     }
 
-//    fun <T : View> Activity.bind(@IdRes idRes: Int): Lazy<T> {
-//        @Suppress("UNCHECKED_CAST")
-//        return unsafeLazy { findViewById<T>(idRes) as T }
-//    }
-//
-//    fun <T : View> View.bind(@IdRes idRes: Int): Lazy<T> {
-//        @Suppress("UNCHECKED_CAST")
-//        return unsafeLazy { findViewById<T>(idRes) as T }
-//    }
-//
-//    private fun <T> unsafeLazy(initializer: () -> T) = lazy(LazyThreadSafetyMode.NONE, initializer)
-
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
 //
 //        menuInflater.inflate(R.menu.menu_toolbar_booklist, menu)
-//        var searchViewItem: MenuItem = menu.findItem(R.id.search_action)
+//
+//        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+//        val searchView = menu.findItem(R.id.search_action).actionView as SearchView
+//        searchView.setSearchableInfo(
+//                searchManager.getSearchableInfo(componentName))
+//
 //        return super.onCreateOptionsMenu(menu)
 //    }
+
+
+//    private fun handleIntent(intent: Intent) {
 //
+//        if (Intent.ACTION_SEARCH == intent.action) {
+//            val query = intent.getStringExtra(SearchManager.QUERY)
+//            //use the query to search your data somehow
+//        }
+//    }
+
 //    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
 //        var id:Int = item!!.itemId
 ////        if (id == R.id.action_settings) return true

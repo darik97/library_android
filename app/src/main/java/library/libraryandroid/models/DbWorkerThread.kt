@@ -3,9 +3,6 @@ package library.libraryandroid.models
 import android.os.Handler
 import android.os.HandlerThread
 
-/**
- * Created by Daria on 07.04.2018.
- */
 class DbWorkerThread(threadName: String) : HandlerThread(threadName) {
 
     private lateinit var mWorkerHandler: Handler

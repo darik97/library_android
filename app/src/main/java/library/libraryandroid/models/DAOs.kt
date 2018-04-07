@@ -5,9 +5,6 @@ import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy.REPLACE
 import android.arch.persistence.room.Query
 
-/**
- * Created by Daria on 07.04.2018.
- */
 @Dao
 interface BriefBookDao {
 

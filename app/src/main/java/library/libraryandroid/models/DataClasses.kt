@@ -46,10 +46,8 @@ data class BriefBook ( @PrimaryKey(autoGenerate = true) var id: Long?,
 data class Book (@PrimaryKey(autoGenerate = true) var id: Long?,
                  @ColumnInfo(name = "brief") var brief: Long?,
                  @ColumnInfo(name = "genre") var genre: String,
-                 @ColumnInfo(name = "rating") var rating: Int,
                  @ColumnInfo(name = "series") var series: String,
-                 @ColumnInfo(name = "description") var description: String,
-                 @ColumnInfo(name = "comment") var comment: String) {
+                 @ColumnInfo(name = "description") var description: String) {
 
-    constructor():this(null, null, "", 0, "", "", "")
+    constructor():this(null, null, "", "", "")
 }

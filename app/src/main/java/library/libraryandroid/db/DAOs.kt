@@ -1,9 +1,11 @@
-package library.libraryandroid.models
+package library.libraryandroid.db
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy.REPLACE
 import android.arch.persistence.room.Query
+import library.libraryandroid.models.Book
+import library.libraryandroid.models.BriefBook
 
 @Dao
 interface BriefBookDao {
@@ -13,6 +15,9 @@ interface BriefBookDao {
 
     @Insert(onConflict = REPLACE)
     fun insert(briefBook: BriefBook)
+
+    @Insert
+    fun insertAll(books:List<BriefBook>)
 
     @Query("delete from BriefBooks")
     fun deleteBriefAll()

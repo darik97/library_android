@@ -47,7 +47,8 @@ data class Book (@PrimaryKey(autoGenerate = true) var id: Long?,
                  @ColumnInfo(name = "brief") var brief: Long?,
                  @ColumnInfo(name = "genre") var genre: String,
                  @ColumnInfo(name = "series") var series: String,
-                 @ColumnInfo(name = "description") var description: String) {
+                 @ColumnInfo(name = "description") var description: String,
+                 @ColumnInfo(name = "image") var image: String) {
 
-    constructor():this(null, null, "", "", "")
+    constructor():this(null, null, "", "", "", "")
 }

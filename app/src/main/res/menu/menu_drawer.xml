@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_all_books"
+            android:title="@string/all_books"/>
+        <item
+            android:id="@+id/nav_read_books"
+            android:title="@string/read_books"/>
+        <item
+            android:id="@+id/nav_plan_books"
+            android:title="@string/books_in_plan"/>
+        <item
+            android:id="@+id/nav_process_books"
+            android:title="@string/books_in_process"/>
+    </group>
+
+</menu>
